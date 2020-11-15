@@ -22,11 +22,13 @@ if os.path.exists(pdf_file_path):
             for i in range(len(pages)):
                 image = pages[i]
                 image.save(os.path.join(target_folder_path, file_name + '.png'), 'PNG')
+            print('Converted successfully, the PNG image saved in', target_folder_path)
         elif target_format == 'jpg' or target_format == 'JPEG':
             pages = convert_from_path(pdf_file_path)
             for i in range(len(pages)):
                 image = pages[i]
                 image.save(os.path.join(target_folder_path, file_name + '.jpg'), 'JPEG')
+            print('Converted successfully, the JPEG image saved in', target_folder_path)
         else:
             print('The first argument shoule be (png | PNG | jpg | JPEG), please try again.')
     else:
